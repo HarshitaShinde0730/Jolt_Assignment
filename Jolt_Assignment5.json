@@ -1,0 +1,20 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "firstName": "fullName",
+      "lastName": "fullName",
+      "email": "email",
+      "address": {
+        "city": "city",
+        "zip": "zip"
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "fullName": "=join(' ', @('fullName.firstName'), @('fullName.lastName'))"
+    }
+  }
+]
