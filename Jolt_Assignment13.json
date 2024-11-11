@@ -1,0 +1,44 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "employee": {
+        "firstName": "name.first",
+        "lastName": "name.last",
+        "address": {
+          "street": "address.street",
+          "city": "address.city",
+          "state": "address.state",
+          "zip": "address.zip"
+        },
+        "phones": {
+          "types": "phoneNumbers.[#2].types",
+          "number": "phoneNumbers.[#2].number"
+        }
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "name": "=concat(@(1,name.first), ' ', @(1,name.last))",
+      "address": "=concat(@(1,address.street), ', ', @(1,address.city), ', ', @(1,address.state), ' ', @(1,address.zip))"
+    }
+  },
+  {
+    "operation": "remove",
+    "spec": {
+      "name": {
+        "first": "",
+        "last": ""
+      },
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "zip": ""
+      }
+    }
+  }
+]
+ 
